@@ -1,9 +1,12 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
+import React from 'react';
+import Test from './components/test'; 
 
 function App() {
   return (
-   <h1>fit to fight</h1>
+    <div className="App">
+      <Test />
+    </div>
   );
 }
 
