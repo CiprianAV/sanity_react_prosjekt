@@ -2,18 +2,20 @@ import React from 'react';
 
 function ProfileCard({ member }) {
   return (
-    <div style={{
-      border: '1px solid #ccc',
-      borderRadius: '8px',
+    <article style={{
+      backgroundColor: '#415A77',
+      color: '#E0E1DD',
+      borderRadius: '12px',
+      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.3)',
       padding: '16px',
       margin: '16px',
-      maxWidth: '200px',
+      maxWidth: '220px',
       textAlign: 'center',
       transition: 'transform 0.3s ease'
     }}
-    // hover effect
-    onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.02)'}
-    onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
+     // hover effect
+      onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.03)'}
+      onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
     >
       {member.imageUrl && (
         <img
@@ -23,8 +25,8 @@ function ProfileCard({ member }) {
         />
       )}
       <h3 style={{ margin: '10px 0' }}>{member.name}</h3>
-      <p style={{ color: '#777', fontSize: '0.9rem' }}>{member.email}</p>
-    </div>
+      <p style={{ fontSize: '0.9rem' }}>{member.email}</p>
+    </article>
   );
 }
 

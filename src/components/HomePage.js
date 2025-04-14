@@ -14,16 +14,18 @@ function HomePage() {
   }, []);
 
   return (
-    <div style={{ padding: '20px' }}>
-      <h2>Gruppemedlemmer</h2>
-      <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
-        {members.map(member => (
-          <Link key={member._id} to={`/profile/${member._id}`} style={{ textDecoration: 'none' }}>
-            <ProfileCard member={member} />
-          </Link>
-        ))}
-      </div>
-    </div>
+    <main style={{ padding: '20px', backgroundColor: '#1B263B', minHeight: '100vh', color: '#E0E1DD' }}>
+      <section>
+        <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '20px' }}>Gruppemedlemmer</h2>
+        <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
+          {members.map(member => (
+            <Link key={member._id} to={`/profile/${member._id}`} style={{ textDecoration: 'none' }}>
+              <ProfileCard member={member} />
+            </Link>
+          ))}
+        </div>
+      </section>
+    </main>
   );
 }
 
