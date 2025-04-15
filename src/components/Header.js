@@ -23,7 +23,7 @@ function Header() {
       alignItems: 'center',
       justifyContent: 'space-between'
     }}>
-      <h1 style={{ margin: 0, fontSize: '1.8rem' }}>Gruppe 7</h1>
+      <h1 style={{ margin: 0, fontSize: '1.8rem' }}>UIN25_Gruppe39</h1>
       <nav>
         <ul style={{
           display: 'flex',

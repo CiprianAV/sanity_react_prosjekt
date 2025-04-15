@@ -31,7 +31,6 @@ function ProfileDetail() {
 
   return (
     <>
-      {/* Inline media query styles */}
       <style>
         {`
           @media (max-width: 768px) {
