@@ -34,57 +34,64 @@ function ProfileDetail() {
       <style>
         {`
           @media (max-width: 768px) {
-            .profile-layout {
+            .profile-wrapper {
               flex-direction: column;
+              align-items: center;
+              text-align: center;
             }
-            .profile-left, .profile-right {
-              max-width: 100% !important;
-              width: 100%;
+            .profile-image {
+              margin-bottom: 20px;
+              margin-left: 6%;
+            }
+            .info-section {
+              align-items: center;
             }
           }
         `}
       </style>
 
-      <main style={{ padding: '20px', backgroundColor: '#1B263B', color: '#fff', minHeight: '100vh' }}>
-        <section className="profile-layout" style={{ display: 'flex', gap: '40px', flexWrap: 'wrap' }}>
-          <aside className="profile-left" style={{ flex: '1', maxWidth: '300px', backgroundColor: '#0D1B2A', padding: '20px', borderRadius: '8px' }}>
-            {member.imageUrl && (
-              <img
-                src={member.imageUrl}
-                alt={member.name}
-                style={{ width: '100%', borderRadius: '8px', marginBottom: '16px' }}
-              />
-            )}
-            <h2 style={{ marginBottom: '10px' }}>{member.name}</h2>
-            <p><strong>E-post:</strong> {member.email}</p>
-            <p><strong>Bio:</strong> {member.bio}</p>
-          </aside>
-          <section className="profile-right" style={{ flex: '2', minWidth: '300px', backgroundColor: '#0D1B2A', padding: '20px', borderRadius: '8px'  }}>
-            <article style={{ marginBottom: '30px' }}>
-              <h3>Interesser</h3>
-              <ul>
-                {member.interests?.map((interest, index) => (
-                  <li key={index}>{interest}</li>
-                ))}
-              </ul>
-            </article>
+      <main style={{ padding: '30px', backgroundColor: '#1B263B', color: '#fff', minHeight: '100vh', display: 'flex', justifyContent: 'center' }}>
+        <div style={{ maxWidth: '900px', width: '100%' }}>
+          <section className="profile-wrapper" style={{ display: 'flex', gap: '30px', alignItems: 'flex-start', marginBottom: '20px' }}>
+            <div className="profile-image" style={{ flexShrink: 0 }}>
+              {member.imageUrl && (
+                <img
+                  src={member.imageUrl}
+                  alt={member.name}
+                  style={{ width: '400px', borderRadius: '26px' }}
+                />
+              )}
+            </div>
 
-            <article>
-              <h3>Loggoverføringer</h3>
-              <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
-                {member.logEntries?.map((entry, index) => (
-                  <li key={index} style={{ marginBottom: '10px' }}>
-                    <strong>{new Date(entry.date).toLocaleDateString()}:</strong> {entry.entry}
-                  </li>
-                ))}
-              </ul>
-            </article>
+            <div className="info-section" style={{ display: 'flex', flexDirection: 'column', gap: '10px' }}>
+              <h2>{member.name}</h2>
+              <p><strong>E-post:</strong> {member.email}</p>
+              <p><strong>Bio:</strong> {member.bio}</p>
+              <div>
+                <h3>Interesser</h3>
+                <ul>
+                  {member.interests?.map((interest, index) => (
+                    <li key={index}>{interest}</li>
+                  ))}
+                </ul>
+              </div>
+            </div>
           </section>
-        </section>
+
+          <section style={{ backgroundColor: '#0D1B2A', padding: '20px', borderRadius: '8px' }}>
+            <h3>Loggoverføringer</h3>
+            <ul style={{ listStyleType: 'none', paddingLeft: 0 }}>
+              {member.logEntries?.map((entry, index) => (
+                <li key={index} style={{ marginBottom: '10px' }}>
+                  <strong>{new Date(entry.date).toLocaleDateString()}:</strong> {entry.entry}
+                </li>
+              ))}
+            </ul>
+          </section>
+        </div>
       </main>
     </>
   );
 }
 
 export default ProfileDetail;
-
