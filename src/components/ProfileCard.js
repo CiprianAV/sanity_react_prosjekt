@@ -13,7 +13,6 @@ function ProfileCard({ member }) {
       textAlign: 'center',
       transition: 'transform 0.3s ease'
     }}
-     // hover effect
       onMouseEnter={e => e.currentTarget.style.transform = 'scale(1.03)'}
       onMouseLeave={e => e.currentTarget.style.transform = 'scale(1)'}
     >
