@@ -23,7 +23,9 @@ function Header() {
       alignItems: 'center',
       justifyContent: 'space-between'
     }}>
+      <Link to="/" style={{ textDecoration: 'none', color: 'inherit' }}>
       <h1 style={{ margin: 0, fontSize: '1.8rem' }}>UIN25_Gruppe39</h1>
+      </Link>
       <nav>
         <ul style={{
           display: 'flex',
