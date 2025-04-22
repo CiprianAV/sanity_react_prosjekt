@@ -25,7 +25,7 @@ function HomePage() {
         <h2 style={{ textAlign: 'center', fontSize: '2rem', marginBottom: '20px' }}>Gruppemedlemmer</h2>
         <div style={{ display: 'flex', flexWrap: 'wrap', justifyContent: 'center' }}>
           {members.map(member => (
-            <Link key={member._id} to={`/profile/${member._id}`} style={{ textDecoration: 'none' }}>
+            <Link key={member._id} to={`/profile/${member._id}`} style={{ textDecoration: 'none', flex: '1 1 250px', maxWidth: '300px', margin: '10px' }}>
               <ProfileCard member={member} />
             </Link>
           ))}
